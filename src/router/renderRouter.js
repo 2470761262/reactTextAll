@@ -10,7 +10,7 @@ export default () => {
                     let { config, routerProps = {} } = props;
                     return <Switch>
                         {
-                            config.map((routerItem, index) => {
+                            config ? config.map((routerItem, index) => {
                                 return (
                                     <Route path={routerItem.path}
                                         key={index}
@@ -28,6 +28,7 @@ export default () => {
                                 )
 
                             })
+                                : null
                         }
                     </Switch >
                 }

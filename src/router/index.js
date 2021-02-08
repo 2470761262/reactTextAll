@@ -1,58 +1,25 @@
 import { asyncCreated } from './asyncRoute';
-import Index from '../pages/index';
-import Login from '../pages/login';
-import Context from '../pages/context';
-import List from '../pages/list';
-const Detail = asyncCreated(() => import('../pages/detail'));
-const JsType = asyncCreated(() => import('../pages/jsType'));
-
-
 
 export default [
     {
         path: "/",
         exact: true,
-        component: Index
+        component: asyncCreated(() => import("../pages/Login"))
     },
     {
-        path: "/Context",
-        component: Context,
-        redirectTo: "/Context/List",
+        path: "/content",
+        component: asyncCreated(() => import("../pages/Content")),
         children: [
             {
-                path: "/Context/List",
-                exact: true,
-                component: List,
-                mate: {
-                    name: "so sorry"
-                },
-                onEnter (props) {
-                    console.log("页面进入", props);
-                    setTimeout(() => {
-                        props.history.replace("/");
-                    }, 1000)
-                },
-                onLeave (props) {
-                    console.log("页面离开", props);
-                }
-            },
-            {
-                path: "/Context/Detail",
-                //    exact: true,
-                component: Detail,
-                children: [
-                    {
-                        path: "/Context/Detail/jsType",
-                        component: JsType
-                    }
-                ]
+                path: "/content/list",
+                component: asyncCreated(() => import("../pages/List"))
             }
         ]
     },
     {
-        path: "/Login",
+        path: "/Detail/:id",//(:/id) 为可选匹配 ?号好像也是可选
         exact: true,
-        component: Login
+        component: asyncCreated(() => import("../pages/Detail")),
     },
     {
         path: "*",
