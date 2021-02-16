@@ -8,6 +8,7 @@ export default [
     },
     {
         path: "/content",
+        redirectTo: "/content/list",
         component: asyncCreated(() => import("../pages/Content")),
         children: [
             {
