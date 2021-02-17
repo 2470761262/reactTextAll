@@ -1,11 +1,11 @@
 import { memo } from 'react';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { actionCreates } from "./store/index";
 import { useParams } from 'react-router-dom';
 import { Spin } from 'antd';
 import Header from './components/header';
-
+import { FlexContent, FlexLeft, FlexRight } from './style/index';
 const Detail = () => {
 
     let loading = useSelector((state) => state.getIn(["detail", "loading"]), shallowEqual);
@@ -25,7 +25,12 @@ const Detail = () => {
 
     return (
         <Spin spinning={loading} >
-            <Header />
+            <FlexContent>
+                <FlexLeft>
+                    <Header />
+                </FlexLeft>
+                <FlexRight></FlexRight>
+            </FlexContent>
         </Spin>
     )
 }
