@@ -3,9 +3,12 @@ import { useSelector, shallowEqual } from "react-redux";
 import { Content } from "../style/header";
 import { Button } from "antd";
 import api from "../../../api/require";
+import ReportPop from "./reportPop";
+import { useDidLog } from '../../../components/didLog/useDidLog';
 
+// import DidLog from '../../../components/didLog/didLog';
 //获取是否可以查看楼栋号 如果是则返回对应的楼栋加单元号
-function useGetShowBuliding (detail) {
+function useGetShowBuliding(detail) {
     let [buildNum, setBuildNum] = useState("");
     useEffect(() => {
         if (detail.has("id")) {
@@ -34,11 +37,18 @@ function useGetShowBuliding (detail) {
 const Header = () => {
 
     let detail = useSelector((state) => state.getIn(["detail", "detail"]), shallowEqual);
-    
+
     let budingNum = useGetShowBuliding(detail);
 
+    let { setShow, DidLog } = useDidLog();
+
+
+    let openReport = () => {
+        setShow(true);
+    }
+
     return (
-        <Content >
+        <Content>
             <div className="content-header-left">
                 <h3>{detail.get("CommunityName")}</h3>
                 <span >{budingNum}</span>
@@ -50,8 +60,13 @@ const Header = () => {
             <div className="content-header-right">
                 <Button>添加印象</Button>
                 <Button>关注</Button>
-                <Button>举报</Button>
+                <Button onClick={openReport}>举报</Button>
             </div>
+
+            {/* 举报框 */}
+            <DidLog title="我要举报" type="error">
+                <ReportPop close={() => setShow(false)}></ReportPop>
+            </DidLog>
         </Content >
     )
 }

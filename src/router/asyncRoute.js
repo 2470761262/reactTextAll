@@ -11,7 +11,7 @@ function AsyncComponent ({ route, delay = 200, loading }, props) {
         delayCom();
         route().then((data) => {
             clearTimeout(timeId);
-            setComponent(<data.default {...props} />);
+            setComponent(<div><data.default {...props} /></div> );
         })
     }, [])
     return component;
@@ -23,4 +23,4 @@ export const asyncCreated = (route) => {
             loading: <div>加载中,请稍后</div>
         }, props);
     })
-} 
+}

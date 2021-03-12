@@ -1,4 +1,4 @@
-import style, { createGlobalStyle, css } from 'styled-components';
+import style from 'styled-components';
 
 export const Content = style.div`
     display: flex;

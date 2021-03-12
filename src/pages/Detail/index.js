@@ -16,9 +16,17 @@ const Detail = () => {
 
     let { remoteDetail } = actionCreates.actions;
 
+    // const [messsageApi] = message.useMessage();
+
     useEffect(() => {
 
         dispatch(remoteDetail(params.id))
+
+        // messsageApi.open({
+        //     type: 'info',
+        //     content: <div>666</div>,
+        //     duration: 1,
+        //   });
 
     }, []);
 
