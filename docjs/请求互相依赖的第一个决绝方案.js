@@ -99,7 +99,7 @@
 //     let [buildNum, setBuildNum] = useState(0);
 //     let budingNumFlag = useGetShowBuliding(detail);
 //     useEffect(() => {
-//         if (useGetShowBuliding) {
+//         if (budingNumFlag) {
 //             console.log("????");
 //             setBuildNum(`${detail.get("BuildingName")}-${detail.get("RoomNo")}`)
 //         }

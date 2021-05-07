@@ -1,8 +1,8 @@
 export default {
-    onRouterEnter (props) {
+    onRouterEnter(props) {
         console.log("全局路由拦截进入");
     },
-    onRouterLeave (props) {
+    onRouterLeave(props) {
         console.log("全局路由拦截离开");
     }
 }

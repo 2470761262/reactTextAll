@@ -2,6 +2,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { RederRouter } from "./routerUtil";
 export const { Provider, Consumer } = React.createContext([]);
+
+
+
 export default () => {
     return (
         <Consumer>
