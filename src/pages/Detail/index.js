@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 import { Spin } from 'antd';
 import Header from './components/header';
 import { FlexContent, FlexLeft, FlexRight } from './style/index';
+import DetailWarp from "./components/detailWarp";
+import Tabs from "./components/tabs";
 const Detail = () => {
 
     let loading = useSelector((state) => state.getIn(["detail", "loading"]), shallowEqual);
@@ -36,8 +38,11 @@ const Detail = () => {
             <FlexContent>
                 <FlexLeft>
                     <Header />
+                    <DetailWarp></DetailWarp>
                 </FlexLeft>
-                <FlexRight></FlexRight>
+                <FlexRight>
+                    <Tabs></Tabs>
+                </FlexRight>
             </FlexContent>
         </Spin>
     )

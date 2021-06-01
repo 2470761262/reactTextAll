@@ -1,0 +1,28 @@
+.content {
+    flex: 1;
+    font-size: 16px;
+}
+
+.content .cell {
+    display: flex;
+    border-bottom: 1px solid #f2f2f2;
+    padding: 15px 0;
+}
+
+.content .cell .cellItem {
+    flex: 1;
+    text-align: center;
+}
+
+.rowCell {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+.rowCell div {
+    flex: 1;
+}
+
+.price {
+    margin-right: 20px;
+}

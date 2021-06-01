@@ -3,7 +3,7 @@ import qs from "qs";
 import { TOKEN } from "../util/constMap";
 
 let http = axios.create({
-    baseURL: "https://bweb.51jiachi.com/", // api 的 base_url
+    baseURL: "http://bwebapi.sys.51jiachi.cn/", // api 的 base_url
     headers: {
         "Content-Type": "application/x-www-form-urlencoded"
     },

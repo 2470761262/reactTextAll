@@ -13,7 +13,7 @@ const Login = (props) => {
             url: "/loginManager/pcLogin",
             data: {
                 clientId: 0,
-                passWord: "E99A18C428CB38D5F260853678922E03",
+                passWord: "AF49087840E569E097A8FB21D482BC51",
                 qrCode: "",
                 sessionId: "sssss",
                 userName: "15280398053",

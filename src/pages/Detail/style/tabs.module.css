@@ -1,0 +1,12 @@
+.tabsHeader{
+    display: flex;
+}
+.tabsHeader > div{
+    width: 100px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.tabsHeader .active{
+    color: blue;
+}
