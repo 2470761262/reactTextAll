@@ -1,12 +1,19 @@
-.tabsHeader{
+.tabsHeader {
     display: flex;
 }
-.tabsHeader > div{
+
+.tabsHeader>div {
     width: 100px;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
 }
-.tabsHeader .active{
+
+.tabsHeader .active {
     color: blue;
+}
+
+.itemtabs {
+    overflow: auto;
+    height: 100px;
 }
