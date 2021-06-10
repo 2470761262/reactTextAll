@@ -31,6 +31,7 @@ const defaultSate = fromJS({
     }
 });
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (state = defaultSate, action) => {
     switch (action.type) {
         case constants.SETLOADING:

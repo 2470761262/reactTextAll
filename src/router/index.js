@@ -1,5 +1,6 @@
 import { asyncCreated } from './asyncRoute';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default [
     {
         path: "/",
@@ -16,6 +17,11 @@ export default [
                 component: asyncCreated(() => import("../pages/List"))
             }
         ]
+    },
+    {
+        path: "/Sage",//(:/id) 为可选匹配 ?号好像也是可选
+        exact: true,
+        component: asyncCreated(() => import("../pages/Sage")),
     },
     {
         path: "/Detail/:id",//(:/id) 为可选匹配 ?号好像也是可选

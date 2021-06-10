@@ -13,7 +13,7 @@ const Context = () => {
                 </Layout.Sider>
                 <Layout.Content>
                     <Layout.Header />
-                         <RouterView />
+                    <RouterView />
                 </Layout.Content>
             </Layout>
         </ContentBox>
